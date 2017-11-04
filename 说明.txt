@@ -1,0 +1,38 @@
+1、建目录
+hadoop fs -mkdir -p /spark/emp/temp/201711112025/d=20171111/h=20/
+2、数据文件
+echo 1 > part-r-00000-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+echo 2 > part-r-00001-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+echo 3 > part-r-00002-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+echo 4 > part-r-00003-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+echo 5 > part-r-00004-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+echo 6 > part-r-00005-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+echo 7 > part-r-00006-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+echo 8 > part-r-00007-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+echo 9 > part-r-00008-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+3、上传文件
+hadoop fs -put  part-r-00000-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt  /spark/emp/temp/201711112025/d=20171111/h=20/
+hadoop fs -put  part-r-00001-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt  /spark/emp/temp/201711112025/d=20171111/h=20/
+hadoop fs -put  part-r-00002-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt  /spark/emp/temp/201711112025/d=20171111/h=20/
+hadoop fs -put  part-r-00003-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt  /spark/emp/temp/201711112025/d=20171111/h=20/
+hadoop fs -put  part-r-00004-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt  /spark/emp/temp/201711112025/d=20171111/h=20/
+hadoop fs -put  part-r-00005-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt  /spark/emp/temp/201711112025/d=20171111/h=20/
+hadoop fs -put  part-r-00006-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt  /spark/emp/temp/201711112025/d=20171111/h=20/
+hadoop fs -put  part-r-00007-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt  /spark/emp/temp/201711112025/d=20171111/h=20/
+hadoop fs -put  part-r-00008-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt  /spark/emp/temp/201711112025/d=20171111/h=20/
+hadoop fs -put _SUCCESS  /spark/emp/temp/201711112025/d=20171111/h=20/
+4、scala读取HDFS文件,获取文件名
+path = hdfs://192.168.2.101:9000/spark/emp/temp/201711112025/d=20171111/h=20/part-r-00008-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+Path.getname = part-r-00008-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+5、改文件名
+0 hdfs:
+1
+2 192.168.2.101:9000
+3 spark
+4 emp
+5 temp
+6 201711112025
+7 d=20171111
+h=20
+part-r-00008-6ba69620-ba52-4cb1-9ea0-6634ae0e16bc.txt
+6、copy
